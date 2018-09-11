@@ -16,10 +16,17 @@
   
   def word_substituter(string)
     string_array = string.split(' ')
+<<<<<<< HEAD
     i = 0
     while i < string_array.size
       dictionary.each { |key, value|
         if string_array[i].downcase == key 
+=======
+     i = 0
+     while i < string_array.size
+      dictionary.each { |key, value|
+        if string_array[i] == key 
+>>>>>>> 69e1b699e3a5c54d714bd0f8ae2bf848e68042f8
           string_array[i] = value
         end
       }
@@ -29,6 +36,7 @@
   end
   
   
+<<<<<<< HEAD
   def bulk_tweet_shortener(tweets)
     tweets.map do |phrase|
       puts word_substituter(phrase)
@@ -54,3 +62,24 @@ def shortened_tweet_truncator(string)
     return string
   end  
 end  
+=======
+def bulk_tweet_shortner(tweets)
+string_array = tweets.collect do |i|
+    i.split(' ')
+  end
+  string_array = string_array.flatten
+  i = 0
+  while i < string_array.size
+   dictionary.each { |key, value|
+     if string_array[i] == key 
+       string_array[i] = value
+     end
+   }
+   i += 1
+ end
+ puts string_array.join(' ')
+end
+  
+  
+  
+>>>>>>> 69e1b699e3a5c54d714bd0f8ae2bf848e68042f8
